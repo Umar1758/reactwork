@@ -1,0 +1,620 @@
+@font-face {
+  font-family: 'qcs';
+  src:  url('../fonts/qcs.eot?xds2xh');
+  src:  url('../fonts/qcs.eot?xds2xh#iefix') format('embedded-opentype'),
+    url('../fonts/qcs.woff2?xds2xh') format('woff2'),
+    url('../fonts/qcs.ttf?xds2xh') format('truetype'),
+    url('../fonts/qcs.woff?xds2xh') format('woff'),
+    url('../fonts/qcs.svg?xds2xh#qcs') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'qcs' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/*added from elements.scss*/
+.icon-single-policy-left-arrow:before {
+  content: "\e907";
+}
+.icon-small-right-arrow:before, .icon-right:before {
+  content: "\e967";
+}
+.icon-resources:before {
+  content: "\e9b3";
+}
+.icon-printer-1:before {
+  content: "\e956";
+}
+.icon-search-skinny:before {
+  content: "\e96e";
+}
+.icon-more:before {
+  content: "\e911";
+}
+/*added from elements.scss end*/
+.icon-clinical:before {
+    content: "\e9bb";
+}
+.icon-dementia:before {
+  content: "\e9b9";
+}
+.icon-mp3:before {
+  content: "\e9ba";
+}
+.icon-permissions:before {
+  content: "\e9b5";
+}
+.icon-api-error:before {
+  content: "\e9b6";
+}
+.icon-error1:before {
+  content: "\e9b7";
+}
+.icon-offline:before {
+  content: "\e9b8";
+}
+.icon-catering-pack:before {
+  content: "\e96d";
+}
+.icon-resource-centre:before {
+  content: "\e9b3";
+}
+.icon-registration-icon:before {
+  content: "\e963";
+}
+.icon-home:before {
+  content: "\e9b2";
+}
+.icon-search-big:before {
+  content: "\e9b4";
+}
+.icon-paper:before {
+  content: "\e9b1";
+}
+.icon-important-policy:before {
+  content: "\e9ab";
+}
+.icon-download-policy:before {
+  content: "\e9ac";
+}
+.icon-edit-policy:before {
+  content: "\e9ad";
+}
+.icon-help-question:before {
+  content: "\e9ae";
+}
+.icon-maximize-sidebar:before {
+  content: "\e9af";
+}
+.icon-minimize-sidebar:before {
+  content: "\e9b0";
+}
+.icon-logo-image:before {
+  content: "\e9aa";
+}
+.icon-virus:before {
+  content: "\e9a9";
+}
+.icon-hr-manager-policies:before {
+  content: "\e9a8";
+}
+.icon-accessibility-globe:before {
+  content: "\e9a3";
+}
+.icon-leadership-and-management:before {
+  content: "\e9a4";
+}
+.icon-environment:before {
+  content: "\e9a5";
+}
+.icon-care-and-support:before {
+  content: "\e9a6";
+}
+.icon-team-group-icon:before {
+  content: "\e9a7";
+}
+.icon-doc:before {
+  content: "\e9a1";
+}
+.icon-docx:before {
+  content: "\e9a2";
+}
+.icon-fee:before {
+  content: "\e99e";
+}
+.icon-inspection:before {
+  content: "\e99f";
+}
+.icon-registration:before {
+  content: "\e9a0";
+}
+.icon-calendar1:before {
+  content: "\e99c";
+}
+.icon-calendar-1:before {
+  content: "\e99d";
+}
+.icon-recite:before {
+  content: "\e99a";
+}
+.icon-compliance-tools1:before {
+  content: "\e99b";
+}
+.icon-flag:before {
+  content: "\e998";
+}
+.icon-user-groups:before {
+  content: "\e999";
+}
+.icon-switch-arrows:before {
+  content: "\e997";
+}
+.icon-one-user:before {
+  content: "\e995";
+}
+.icon-multiple-users:before {
+  content: "\e996";
+}
+.icon-full-screen:before {
+  content: "\e994";
+}
+.icon-invisible:before {
+  content: "\e993";
+}
+.icon-sharing-interface:before {
+  content: "\e992";
+}
+.icon-video-help-centre:before {
+  content: "\e990";
+}
+.icon-company-item:before {
+  content: "\e991";
+}
+.icon-edit-line:before {
+  content: "\e98a";
+}
+.icon-upload-line:before {
+  content: "\e98b";
+}
+.icon-complete-line:before {
+  content: "\e98c";
+}
+.icon-management:before {
+  content: "\e98d";
+}
+.icon-team2:before {
+  content: "\e98e";
+}
+.icon-job-title:before {
+  content: "\e98f";
+}
+.icon-access:before {
+  content: "\e900";
+}
+.icon-accessibility:before {
+  content: "\e901";
+}
+.icon-add:before {
+  content: "\e902";
+}
+.icon-administration:before {
+  content: "\e903";
+}
+.icon-all-policy:before {
+  content: "\e904";
+}
+.icon-archive:before {
+  content: "\e905";
+}
+.icon-avatar:before {
+  content: "\e906";
+}
+.icon-back:before {
+  content: "\e907";
+}
+.icon-birthday:before {
+  content: "\e908";
+}
+.icon-calendar:before {
+  content: "\e909";
+}
+.icon-care-management:before {
+  content: "\e90a";
+}
+.icon-care-planning:before {
+  content: "\e90b";
+}
+.icon-caring:before {
+  content: "\e90c";
+}
+.icon-check:before {
+  content: "\e90d";
+}
+.icon-clinical-governance:before {
+  content: "\e90e";
+}
+.icon-close:before {
+  content: "\e90f";
+}
+.icon-compliance-tools:before {
+  content: "\e910";
+}
+.icon-context-menu:before {
+  content: "\e911";
+}
+.icon-create-more-than-one-user:before {
+  content: "\e912";
+}
+.icon-create-one-user .path1:before {
+  content: "\e913";
+  color: rgb(0, 0, 0);
+}
+.icon-create-one-user .path2:before {
+  content: "\e914";
+  margin-left: -1em;
+  color: rgb(0, 135, 206);
+}
+.icon-create-one-user .path3:before {
+  content: "\e915";
+  margin-left: -1em;
+  color: rgb(0, 135, 206);
+}
+.icon-create-one-user .path4:before {
+  content: "\e916";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-crtitical-impact:before {
+  content: "\e917";
+}
+.icon-custom-documents:before {
+  content: "\e918";
+}
+.icon-dashboard:before {
+  content: "\e919";
+}
+.icon-definitions:before {
+  content: "\e91a";
+}
+.icon-document-download:before {
+  content: "\e91b";
+}
+.icon-down:before {
+  content: "\e91c";
+}
+.icon-download:before {
+  content: "\e91d";
+}
+.icon-edit:before {
+  content: "\e91e";
+}
+.icon-education:before {
+  content: "\e91f";
+}
+.icon-effective:before {
+  content: "\e920";
+}
+.icon-email:before {
+  content: "\e921";
+}
+.icon-error:before {
+  content: "\e922";
+}
+.icon-expert-insights:before {
+  content: "\e923";
+}
+.icon-export:before {
+  content: "\e924";
+}
+.icon-family:before {
+  content: "\e925";
+}
+.icon-favorite:before {
+  content: "\e926";
+}
+.icon-fees:before {
+  content: "\e927";
+}
+.icon-filter:before {
+  content: "\e928";
+}
+.icon-forms:before {
+  content: "\e929";
+}
+.icon-fundemental-standards:before {
+  content: "\e92a";
+}
+.icon-further-reading:before {
+  content: "\e92b";
+}
+.icon-gdpr:before {
+  content: "\e92c";
+}
+.icon-grid:before {
+  content: "\e92d";
+}
+.icon-groups:before {
+  content: "\e92e";
+}
+.icon-guidance-policies:before {
+  content: "\e92f";
+}
+.icon-health-safety:before {
+  content: "\e930";
+}
+.icon-high-impact:before {
+  content: "\e931";
+}
+.icon-highlight:before {
+  content: "\e932";
+}
+.icon-hobbies:before {
+  content: "\e933";
+}
+.icon-human-resources:before {
+  content: "\e934";
+}
+.icon-idea:before {
+  content: "\e935";
+}
+.icon-implementation-guidance:before {
+  content: "\e936";
+}
+.icon-info:before {
+  content: "\e937";
+}
+.icon-key-facts-people-affected-by-the-service:before {
+  content: "\e938";
+}
+.icon-key-facts-professionals:before {
+  content: "\e939";
+}
+.icon-left-arrow:before {
+  content: "\e93a";
+}
+.icon-legal:before {
+  content: "\e93b";
+}
+.icon-line-minus:before {
+  content: "\e93c";
+}
+.icon-line-plus:before {
+  content: "\e93d";
+}
+.icon-list:before {
+  content: "\e93e";
+}
+.icon-location:before {
+  content: "\e93f";
+}
+.icon-maintenance:before {
+  content: "\e940";
+}
+.icon-manage:before {
+  content: "\e941";
+}
+.icon-meals-and-refreshments:before {
+  content: "\e942";
+}
+.icon-medications-management:before {
+  content: "\e943";
+}
+.icon-minimise:before {
+  content: "\e944";
+}
+.icon-mobile-app:before {
+  content: "\e945";
+}
+.icon-mock-inspections:before {
+  content: "\e946";
+}
+.icon-monthly-briefing:before {
+  content: "\e947";
+}
+.icon-monthly-policy-briefing:before {
+  content: "\e948";
+}
+.icon-montlhy-updates:before {
+  content: "\e949";
+}
+.icon-notifications-reading-list:before {
+  content: "\e94a";
+}
+.icon-notifications-risk-assessments:before {
+  content: "\e94b";
+}
+.icon-notifications-settings:before {
+  content: "\e94c";
+}
+.icon-notifications:before {
+  content: "\e94d";
+}
+.icon-objectives:before {
+  content: "\e94e";
+}
+.icon-open:before {
+  content: "\e94f";
+}
+.icon-outstanding-practice:before {
+  content: "\e950";
+}
+.icon-personal-info:before {
+  content: "\e951";
+}
+.icon-phone:before {
+  content: "\e952";
+}
+.icon-policies:before {
+  content: "\e953";
+}
+.icon-policy-centre:before {
+  content: "\e954";
+}
+.icon-policy:before {
+  content: "\e955";
+}
+.icon-print:before {
+  content: "\e956";
+}
+.icon-procedures:before {
+  content: "\e957";
+}
+.icon-purpose:before {
+  content: "\e958";
+}
+.icon-quality-assurance:before {
+  content: "\e959";
+}
+.icon-question:before {
+  content: "\e95a";
+}
+.icon-reading-list-one:before {
+  content: "\e95b";
+}
+.icon-reading-list:before {
+  content: "\e95c";
+}
+.icon-Registration-registration-conditions:before {
+  content: "\e95d";
+}
+.icon-religition:before {
+  content: "\e95e";
+}
+.icon-remove:before {
+  content: "\e95f";
+}
+.icon-replace-bw:before {
+  content: "\e960";
+}
+.icon-report:before {
+  content: "\e961";
+}
+.icon-residential-services:before {
+  content: "\e962";
+}
+.icon-resources-2:before {
+  content: "\e964";
+}
+.icon-responsive:before {
+  content: "\e965";
+}
+.icon-review-sheet:before {
+  content: "\e966";
+}
+.icon-right-arrow:before {
+  content: "\e967";
+}
+.icon-risk-area-b-w:before {
+  content: "\e968";
+}
+.icon-risk-area:before {
+  content: "\e969";
+}
+.icon-risk-assessments:before {
+  content: "\e96a";
+}
+.icon-safe:before {
+  content: "\e96b";
+}
+.icon-scope:before {
+  content: "\e96c";
+}
+.icon-search:before {
+  content: "\e96e";
+}
+.icon-send-email:before {
+  content: "\e96f";
+}
+.icon-service-users:before {
+  content: "\e970";
+}
+.icon-share:before {
+  content: "\e971";
+}
+.icon-single:before {
+  content: "\e972";
+}
+.icon-staff-hr:before {
+  content: "\e973";
+}
+.icon-subscription:before {
+  content: "\e974";
+}
+.icon-sucess:before {
+  content: "\e975";
+}
+.icon-support:before {
+  content: "\e976";
+}
+.icon-surveys:before {
+  content: "\e977";
+}
+.icon-system-details:before {
+  content: "\e978";
+}
+.icon-systems:before {
+  content: "\e979";
+}
+.icon-team:before {
+  content: "\e97a";
+}
+.icon-theme:before {
+  content: "\e97b";
+}
+.icon-thumb-down:before {
+  content: "\e97c";
+}
+.icon-time:before {
+  content: "\e97d";
+}
+.icon-top:before {
+  content: "\e97e";
+}
+.icon-trash:before {
+  content: "\e97f";
+}
+.icon-update-bw:before {
+  content: "\e980";
+}
+.icon-update:before {
+  content: "\e981";
+}
+.icon-video-play:before {
+  content: "\e982";
+}
+.icon-well-led:before {
+  content: "\e983";
+}
+.icon-work:before {
+  content: "\e984";
+}
+.icon-xlsx:before {
+  content: "\e985";
+}
+.icon-your-business:before {
+  content: "\e986";
+}
+.icon-your-contact:before {
+  content: "\e987";
+}
+.icon-your-key-people:before {
+  content: "\e988";
+}
+.icon-your-property:before {
+  content: "\e989";
+}

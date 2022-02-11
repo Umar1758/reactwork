@@ -8,6 +8,7 @@ import {
 import { StyledLink as Link } from "baseui/link";
 import { TableBuilder, TableBuilderColumn } from "baseui/table-semantic";
 import Indicators from "../components/indicators";
+import Icons from "../components/icons";
 function Tables(props) {
   const [sortColumn, setSortColumn] = useState("bar");
   const [sortAsc, setSortAsc] = useState(true);
@@ -22,6 +23,12 @@ function Tables(props) {
       color: "#0aa401",
       border: "#0aa401",
       tooltiptext: "Read",
+      iconname: "compliance-tools",
+      colorcode: "#f33939",
+      tooltipopup: "Not Compliant",
+      iconrisk: "risk-assessments",
+      riskcode: "#FF9500",
+      risktooltip: "Medium Risk",
     },
     {
       foo: 1,
@@ -32,6 +39,12 @@ function Tables(props) {
       color: "#ff9500",
       border: "#ff9500",
       tooltiptext: "UnRead",
+      iconname: "compliance-tools",
+      colorcode: "#3ba500",
+      tooltipopup: "Compliant",
+      iconrisk: "risk-assessments",
+      riskcode: "#FF9500",
+      risktooltip: "Medium Risk",
     },
     {
       foo: 2,
@@ -42,6 +55,12 @@ function Tables(props) {
       color: "#f33939",
       border: "#f33939",
       tooltiptext: "Affirmed",
+      iconname: "compliance-tools",
+      colorcode: "#ff9500",
+      tooltipopup: "Partially Compliant",
+      iconrisk: "risk-assessments",
+      riskcode: "#3BA500",
+      risktooltip: "Low Risk",
     },
     {
       foo: 144,
@@ -52,6 +71,12 @@ function Tables(props) {
       color: "#fff",
       border: "#0aa401",
       tooltiptext: "Affirmed",
+      iconname: "compliance-tools",
+      colorcode: "#f33939",
+      tooltipopup: "Not Compliant",
+      iconrisk: "risk-assessments",
+      riskcode: "#F33939",
+      risktooltip: "High Risk",
     },
   ]);
 
@@ -109,13 +134,24 @@ function Tables(props) {
         </TableBuilderColumn>
         <TableBuilderColumn id="actions" header="Actions" sortable>
           {(row) => (
-            <Indicators
-              color={row.color}
-              border={row.border}
-              tooltiptext={row.tooltiptext}
-            ></Indicators>
+            <Icons
+              iconname={row.iconname}
+              colorcode={row.colorcode}
+              tooltipopup={row.tooltipopup}
+            ></Icons>
           )}
         </TableBuilderColumn>
+
+        <TableBuilderColumn id="risk" header="Risk" sortable>
+          {(row) => (
+            <Icons
+              iconname={row.iconrisk}
+              colorcode={row.riskcode}
+              tooltipopup={row.risktooltip}
+            ></Icons>
+          )}
+        </TableBuilderColumn>
+
         <TableBuilderColumn id="bar" header="Produce" sortable>
           {(row) => (
             <Link

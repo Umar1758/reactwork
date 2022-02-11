@@ -11,6 +11,7 @@ import Roundfillbutton from "../../components/roundfillbutton";
 import Tables from "../../components/tables";
 import Topheader from "../../components/topheader";
 import Indicators from "../../components/indicators";
+import Icons from "../../components/icons";
 import Navtabs from "../../components/navtabs";
 
 import { Grid, Cell } from "baseui/layout-grid";
@@ -121,6 +122,20 @@ function Elements() {
                     })}
                   >
                     Indicators
+                  </StyledLink>
+                  <StyledLink
+                    href="#icon"
+                    className={css({
+                      fontSize: "20px",
+                      color: "#000",
+                      lineHeight: "24px",
+                      fontWeight: "500",
+                      marginBottom: "16px",
+                      textAlign: "left",
+                      display: "block",
+                    })}
+                  >
+                    Icons
                   </StyledLink>
                   <StyledLink
                     href="#tables"
@@ -332,7 +347,7 @@ function Elements() {
                 </h3>
                 <Textareaform></Textareaform>
               </section>
-              <section id="tables">
+              <section id="indicators">
                 <h3
                   className={css({
                     fontSize: "20px",
@@ -371,6 +386,78 @@ function Elements() {
                   tooltiptext={"UnRead"}
                 ></Indicators>
                 <br></br>
+              </section>
+              <section id="icons">
+                <h3
+                  className={css({
+                    fontSize: "20px",
+                    color: "#000",
+                    lineHeight: "24px",
+                    fontWeight: "500",
+                    marginBottom: "16px",
+                    textAlign: "left",
+                  })}
+                >
+                  Icons
+                </h3>
+                <div
+                  className={css({
+                    display: "flex",
+                  })}
+                >
+                  <div
+                    className={css({
+                      marginRight: "15px",
+                      display: "flex",
+                      flexDirection: "column",
+                    })}
+                  >
+                    <Icons
+                      iconname={"compliance-tools"}
+                      colorcode={"#ff9500"}
+                      tooltipopup={"Partially Compliant"}
+                    ></Icons>
+                    <br></br>
+                    <Icons
+                      iconname={"compliance-tools"}
+                      colorcode={"#f33939"}
+                      tooltipopup={"Not Compliant"}
+                    ></Icons>
+                    <br></br>
+                    <Icons
+                      iconname={"compliance-tools"}
+                      colorcode={"#3ba500"}
+                      tooltipopup={"Compliant"}
+                    ></Icons>
+                    <br></br>
+                  </div>
+                  <div
+                    className={css({
+                      marginRight: "15px",
+                      display: "flex",
+                      flexDirection: "column",
+                    })}
+                  >
+                    <Icons
+                      iconname={"risk-assessments"}
+                      colorcode={"#ff9500"}
+                      tooltipopup={"Medium Risk"}
+                    ></Icons>
+                    <br></br>
+                    <Icons
+                      iconname={"risk-assessments"}
+                      colorcode={"#f33939"}
+                      tooltipopup={"High Risk"}
+                    ></Icons>
+                    <br></br>
+                    <Icons
+                      iconname={"risk-assessments"}
+                      colorcode={"#3ba500"}
+                      tooltipopup={"Low Risk"}
+                    ></Icons>
+                    <br></br>
+                  </div>
+                </div>
               </section>
               <section id="tables">
                 <h3

@@ -1,7 +1,9 @@
 import * as React from "react";
 import { useStyletron } from "baseui";
+import { StatefulPopover, PLACEMENT, TRIGGER_TYPE } from "baseui/popover";
+import { Paragraph3 } from "baseui/typography";
 
-function Dementiacard(pros) {
+function Dementiacard(props) {
   const [css, theme] = useStyletron();
   return (
     <div
@@ -25,7 +27,7 @@ function Dementiacard(pros) {
             zIndex: "1",
           })}
         >
-          <img src={pros.logosrc} className={css({})} />
+          <img src={props.logosrc} className={css({})} />
         </div>
         <div className={css({ position: "relative" })}>
           <figure
@@ -36,7 +38,7 @@ function Dementiacard(pros) {
             })}
           >
             <img
-              src={pros.imgSrc}
+              src={props.imgSrc}
               className={css({
                 height: "87px",
                 width: "87px",
@@ -47,15 +49,55 @@ function Dementiacard(pros) {
               })}
             />
           </figure>
-          <div
-            className={css({
-              position: "absolute",
-              top: "25px",
-              right: "25px",
-            })}
+          <StatefulPopover
+            content={
+              <Paragraph3 margin="0" padding="scale500">
+                {props.tooltipbrain}
+              </Paragraph3>
+            }
+            accessibilityType={"tooltip"}
+            showArrow
+            triggerType={TRIGGER_TYPE.hover}
+            placement={PLACEMENT.bottom}
+            overrides={{
+              Root: {
+                style: ({ $theme }) => ({
+                  // outline: `${$theme.colors.warning200} solid`,
+                  outline: "0",
+                  border: "0",
+                }),
+              },
+              Arrow: {
+                style: ({ $theme }) => ({
+                  // outline: `${$theme.colors.warning200} solid`,
+                  backgroundColor: "#fff2bd",
+                }),
+              },
+              Body: {
+                style: ({ $theme }) => ({
+                  outline: "0",
+                  padding: "0",
+                  backgroundColor: "transparent",
+                }),
+              },
+              Inner: {
+                style: ({ $theme }) => ({
+                  backgroundColor: "#fff2bd",
+                }),
+              },
+            }}
           >
-            <img src={pros.brainProgress} />
-          </div>
+            <div
+              className={css({
+                position: "absolute",
+                top: "25px",
+                right: "25px",
+                cursor: "pointer",
+              })}
+            >
+              <img src={props.brainProgress} />
+            </div>
+          </StatefulPopover>
         </div>
       </div>
       <h3
@@ -75,7 +117,7 @@ function Dementiacard(pros) {
           marginBottom: "0",
         })}
       >
-        {pros.title}
+        {props.title}
       </h3>
       <p
         className={css({
@@ -88,7 +130,7 @@ function Dementiacard(pros) {
           marginBottom: "0",
         })}
       >
-        Due: {pros.date}
+        Due: {props.date}
       </p>
     </div>
   );

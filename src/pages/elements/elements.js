@@ -245,6 +245,7 @@ function Elements() {
                         brainProgress={"/images/brain01.svg"}
                         title={"Vyrkyre Vrangoth"}
                         date={"sep 21'21 "}
+                        tooltipbrain={"Tooltip Text"}
                       ></Dementiacard>
                     </div>
                     <div
@@ -261,6 +262,7 @@ function Elements() {
                         brainProgress={"/images/brain02.svg"}
                         title={"Vyrkyre Vrangoth"}
                         date={"sep 21'21 "}
+                        tooltipbrain={"Tooltip Text"}
                       ></Dementiacard>
                     </div>
                     <div
@@ -277,6 +279,7 @@ function Elements() {
                         brainProgress={"/images/brain01.svg"}
                         title={"Vyrkyre Vrangoth"}
                         date={"sep 21'21 "}
+                        tooltipbrain={"Tooltip Text"}
                       ></Dementiacard>
                     </div>
                     <div
@@ -293,6 +296,7 @@ function Elements() {
                         brainProgress={"/images/brain02.svg"}
                         title={"Vyrkyre Vrangoth"}
                         date={"sep 21'21 "}
+                        tooltipbrain={"Tooltip Text"}
                       ></Dementiacard>
                     </div>
                     <div
@@ -309,6 +313,7 @@ function Elements() {
                         brainProgress={"/images/brain03.svg"}
                         title={"Vyrkyre Vrangoth"}
                         date={"sep 21'21 "}
+                        tooltipbrain={"Tooltip Text"}
                       ></Dementiacard>
                     </div>
                   </div>

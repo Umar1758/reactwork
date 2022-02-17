@@ -13,9 +13,17 @@ import Topheader from "../../components/topheader";
 import Indicators from "../../components/indicators";
 import Icons from "../../components/icons";
 import Navtabs from "../../components/navtabs";
-
 import { Grid, Cell } from "baseui/layout-grid";
 import { StyledLink } from "baseui/link";
+import Dementiacard from "../../components/dementiacard";
+import {
+  HeadingXXLarge,
+  HeadingXLarge,
+  HeadingLarge,
+  HeadingMedium,
+  HeadingSmall,
+  HeadingXSmall,
+} from "baseui/typography";
 
 function Elements() {
   const [value, setValue] = React.useState("");
@@ -23,12 +31,15 @@ function Elements() {
   const backtext = "Back";
   const [css] = useStyletron();
   const [activeKey, setActiveKey] = React.useState("0");
+  const heading1 = "Engagement Measures Due";
+  const heading2 = "Ability Assessment Due";
+
   return (
     <div className="AppHome">
       <Outer>
         <Grid>
           <Cell
-            span={[3]}
+            span={[2]}
             overrides={{
               Cell: {
                 style: ({ $theme }) => ({
@@ -53,6 +64,20 @@ function Elements() {
                     },
                   })}
                 >
+                  <StyledLink
+                    href="#dementiacenter"
+                    className={css({
+                      fontSize: "20px",
+                      color: "#000",
+                      lineHeight: "24px",
+                      fontWeight: "500",
+                      marginBottom: "16px",
+                      textAlign: "left",
+                      display: "block",
+                    })}
+                  >
+                    Dementia Center
+                  </StyledLink>
                   <StyledLink
                     href="#buttons"
                     className={css({
@@ -169,8 +194,257 @@ function Elements() {
               </nav>
             </Inner>
           </Cell>
-          <Cell span={[9]}>
+          <Cell span={[10]}>
             <Inner>
+              <section id="dementiacenter">
+                <h3
+                  className={css({
+                    fontSize: "20px",
+                    color: "#000",
+                    lineHeight: "24px",
+                    fontWeight: "500",
+                    marginBottom: "16px",
+                    textAlign: "left",
+                  })}
+                >
+                  Dementia Center Design
+                </h3>
+                <Topheader
+                  label={"Dementia Center Dashboard"}
+                  isSearch={true}
+                  placeholder={"Type keyword to find Service User"}
+                ></Topheader>
+                <div className="dashboardwidget">
+                  <div
+                    className={css({
+                      paddingBottom: "15px",
+                    })}
+                  >
+                    <HeadingXSmall margin="0" color={"#363636"}>
+                      {heading1}
+                    </HeadingXSmall>
+                  </div>
+                  <div
+                    className={css({
+                      display: "flex",
+                      flexWrap: "nowrap",
+                      marginBottom: "25px",
+                    })}
+                  >
+                    <div
+                      className={css({
+                        maxWidth: "20%",
+                        flex: "20%",
+                        paddingLeft: "0",
+                        paddingRight: "10px",
+                      })}
+                    >
+                      <Dementiacard
+                        imgSrc={"/images/person.svg"}
+                        logosrc={"/images/icon01.svg"}
+                        brainProgress={"/images/brain01.svg"}
+                        title={"Vyrkyre Vrangoth"}
+                        date={"sep 21'21 "}
+                      ></Dementiacard>
+                    </div>
+                    <div
+                      className={css({
+                        maxWidth: "20%",
+                        flex: "20%",
+                        paddingLeft: "10px",
+                        paddingRight: "10px",
+                      })}
+                    >
+                      <Dementiacard
+                        imgSrc={"/images/person.svg"}
+                        logosrc={"/images/icon02.svg"}
+                        brainProgress={"/images/brain02.svg"}
+                        title={"Vyrkyre Vrangoth"}
+                        date={"sep 21'21 "}
+                      ></Dementiacard>
+                    </div>
+                    <div
+                      className={css({
+                        maxWidth: "20%",
+                        flex: "20%",
+                        paddingLeft: "10px",
+                        paddingRight: "10px",
+                      })}
+                    >
+                      <Dementiacard
+                        imgSrc={"/images/person.svg"}
+                        logosrc={"/images/icon01.svg"}
+                        brainProgress={"/images/brain01.svg"}
+                        title={"Vyrkyre Vrangoth"}
+                        date={"sep 21'21 "}
+                      ></Dementiacard>
+                    </div>
+                    <div
+                      className={css({
+                        maxWidth: "20%",
+                        flex: "20%",
+                        paddingLeft: "10px",
+                        paddingRight: "10px",
+                      })}
+                    >
+                      <Dementiacard
+                        imgSrc={"/images/person.svg"}
+                        logosrc={"/images/icon02.svg"}
+                        brainProgress={"/images/brain02.svg"}
+                        title={"Vyrkyre Vrangoth"}
+                        date={"sep 21'21 "}
+                      ></Dementiacard>
+                    </div>
+                    <div
+                      className={css({
+                        maxWidth: "20%",
+                        flex: "20%",
+                        paddingLeft: "10px",
+                        paddingRight: "0",
+                      })}
+                    >
+                      <Dementiacard
+                        imgSrc={"/images/person.svg"}
+                        logosrc={"/images/icon02.svg"}
+                        brainProgress={"/images/brain03.svg"}
+                        title={"Vyrkyre Vrangoth"}
+                        date={"sep 21'21 "}
+                      ></Dementiacard>
+                    </div>
+                  </div>
+                  <div
+                    className={css({
+                      textAlign: "center",
+                    })}
+                  >
+                    <Roundfillbutton
+                      buttonColor={"#ffffff"}
+                      buttonHoverColor={"#ffffff"}
+                      borderColor={"#B0B0B0"}
+                      textColor={"#363636"}
+                      text={"View All"}
+                      hasArrow={false}
+                      borderRadius={"100px"}
+                      minwidth={"130px"}
+                    ></Roundfillbutton>
+                  </div>
+                </div>
+                <div className="dashboardwidget">
+                  <div
+                    className={css({
+                      paddingBottom: "15px",
+                    })}
+                  >
+                    <HeadingXSmall margin="0" color={"#363636"}>
+                      {heading2}
+                    </HeadingXSmall>
+                  </div>
+                  <div
+                    className={css({
+                      display: "flex",
+                      flexWrap: "nowrap",
+                      marginBottom: "25px",
+                    })}
+                  >
+                    <div
+                      className={css({
+                        maxWidth: "20%",
+                        flex: "20%",
+                        paddingLeft: "0",
+                        paddingRight: "10px",
+                      })}
+                    >
+                      <Dementiacard
+                        imgSrc={"/images/person.svg"}
+                        logosrc={"/images/e-letter.svg"}
+                        brainProgress={""}
+                        title={"Urevhur Masrawyn"}
+                        date={"sep 21'21 "}
+                      ></Dementiacard>
+                    </div>
+                    <div
+                      className={css({
+                        maxWidth: "20%",
+                        flex: "20%",
+                        paddingLeft: "10px",
+                        paddingRight: "10px",
+                      })}
+                    >
+                      <Dementiacard
+                        imgSrc={"/images/person.svg"}
+                        logosrc={"/images/r-letter.svg"}
+                        brainProgress={""}
+                        title={"Urevhur Masrawyn"}
+                        date={"sep 21'21 "}
+                      ></Dementiacard>
+                    </div>
+                    <div
+                      className={css({
+                        maxWidth: "20%",
+                        flex: "20%",
+                        paddingLeft: "10px",
+                        paddingRight: "10px",
+                      })}
+                    >
+                      <Dementiacard
+                        imgSrc={"/images/person.svg"}
+                        logosrc={"/images/r-letter.svg"}
+                        brainProgress={""}
+                        title={"Vyrkyre Vrangoth"}
+                        date={"sep 21'21 "}
+                      ></Dementiacard>
+                    </div>
+                    <div
+                      className={css({
+                        maxWidth: "20%",
+                        flex: "20%",
+                        paddingLeft: "10px",
+                        paddingRight: "10px",
+                      })}
+                    >
+                      <Dementiacard
+                        imgSrc={"/images/person.svg"}
+                        logosrc={"/images/r-letter.svg"}
+                        brainProgress={""}
+                        title={"Ydhefaris Naraloth Glenn glenn"}
+                        date={"sep 21'21 "}
+                      ></Dementiacard>
+                    </div>
+                    <div
+                      className={css({
+                        maxWidth: "20%",
+                        flex: "20%",
+                        paddingLeft: "10px",
+                        paddingRight: "0",
+                      })}
+                    >
+                      <Dementiacard
+                        imgSrc={"/images/person.svg"}
+                        logosrc={"/images/e-letter.svg"}
+                        brainProgress={""}
+                        title={"Ydhefaris Naraloth Glenn glenn"}
+                        date={"sep 21'21 "}
+                      ></Dementiacard>
+                    </div>
+                  </div>
+                  <div
+                    className={css({
+                      textAlign: "center",
+                    })}
+                  >
+                    <Roundfillbutton
+                      buttonColor={"#ffffff"}
+                      buttonHoverColor={"#ffffff"}
+                      borderColor={"#B0B0B0"}
+                      textColor={"#363636"}
+                      text={"View all"}
+                      hasArrow={false}
+                      borderRadius={"100px"}
+                      minwidth={"130px"}
+                    ></Roundfillbutton>
+                  </div>
+                </div>
+              </section>
               <section id="buttons">
                 <h3
                   className={css({
@@ -205,41 +479,72 @@ function Elements() {
                   >
                     Wizard Buttons
                   </h2>
-                  <Roundfillbutton
-                    buttonColor={"#318500"}
-                    buttonHoverColor={"#3ba500"}
-                    textColor={"#fff"}
-                    text={"Label"}
-                    hasArrow={true}
-                    borderRadius={"100px"}
-                  ></Roundfillbutton>
+                  <div
+                    className={css({
+                      marginRight: "10px",
+                    })}
+                  >
+                    {" "}
+                    <Roundfillbutton
+                      buttonColor={"#318500"}
+                      buttonHoverColor={"#3ba500"}
+                      textColor={"#fff"}
+                      text={"Label"}
+                      hasArrow={true}
+                      borderRadius={"100px"}
+                      minwidth={"150px"}
+                    ></Roundfillbutton>
+                  </div>
 
-                  <Roundfillbutton
-                    buttonColor={"#318500"}
-                    buttonHoverColor={"#3ba500"}
-                    textColor={"#fff"}
-                    text={"Save"}
-                    hasArrow={false}
-                    borderRadius={"100px"}
-                  ></Roundfillbutton>
-                  <Roundfillbutton
-                    buttonColor={"#ffffff"}
-                    buttonHoverColor={"#f8f8f8"}
-                    borderColor={"#3c3c3c"}
-                    textColor={"#3c3c3c"}
-                    text={"Save"}
-                    hasArrow={false}
-                    borderRadius={"100px"}
-                  ></Roundfillbutton>
-                  <Roundfillbutton
-                    buttonColor={"#ffffff"}
-                    buttonHoverColor={"#f8f8f8"}
-                    borderColor={"#3c3c3c"}
-                    textColor={"#3c3c3c"}
-                    text={backtext}
-                    hasArrow={false}
-                    borderRadius={"100px"}
-                  ></Roundfillbutton>
+                  <div
+                    className={css({
+                      marginRight: "10px",
+                    })}
+                  >
+                    <Roundfillbutton
+                      buttonColor={"#318500"}
+                      buttonHoverColor={"#3ba500"}
+                      textColor={"#fff"}
+                      text={"Save"}
+                      hasArrow={false}
+                      borderRadius={"100px"}
+                      minwidth={"150px"}
+                    ></Roundfillbutton>
+                  </div>
+
+                  <div
+                    className={css({
+                      marginRight: "10px",
+                    })}
+                  >
+                    <Roundfillbutton
+                      buttonColor={"#ffffff"}
+                      buttonHoverColor={"#f8f8f8"}
+                      borderColor={"#3c3c3c"}
+                      textColor={"#3c3c3c"}
+                      text={"Save"}
+                      hasArrow={false}
+                      borderRadius={"100px"}
+                      minwidth={"150px"}
+                    ></Roundfillbutton>
+                  </div>
+
+                  <div
+                    className={css({
+                      marginRight: "10px",
+                    })}
+                  >
+                    <Roundfillbutton
+                      buttonColor={"#ffffff"}
+                      buttonHoverColor={"#f8f8f8"}
+                      borderColor={"#3c3c3c"}
+                      textColor={"#3c3c3c"}
+                      text={backtext}
+                      hasArrow={false}
+                      borderRadius={"100px"}
+                      minwidth={"150px"}
+                    ></Roundfillbutton>
+                  </div>
                 </div>
                 <div
                   className={css({
@@ -261,44 +566,70 @@ function Elements() {
                   >
                     Popup Buttons
                   </h2>
-                  <Roundfillbutton
-                    buttonColor={"#ffffff"}
-                    buttonHoverColor={"#ffffff"}
-                    textColor={"#0565FF"}
-                    borderColor={"#0565FF"}
-                    text={next}
-                    hasArrow={false}
-                    borderRadius={"4px"}
-                  ></Roundfillbutton>
-
-                  <Roundfillbutton
-                    buttonColor={"#ffffff"}
-                    buttonHoverColor={"#ffffff"}
-                    textColor={"#b00707 "}
-                    borderColor={"#b00707"}
-                    text={"Label"}
-                    hasArrow={false}
-                    borderRadius={"4px"}
-                  ></Roundfillbutton>
-
-                  <Roundfillbutton
-                    buttonColor={"#ffffff"}
-                    buttonHoverColor={"#ffffff"}
-                    textColor={"#066501"}
-                    borderColor={"#066501"}
-                    text={"Label"}
-                    hasArrow={false}
-                    borderRadius={"4px"}
-                  ></Roundfillbutton>
-                  <Roundfillbutton
-                    buttonColor={"#e71313"}
-                    buttonHoverColor={"#b30f0f"}
-                    borderColor={"#e71313"}
-                    textColor={"#fff"}
-                    text={"Label"}
-                    hasArrow={false}
-                    borderRadius={"4px"}
-                  ></Roundfillbutton>
+                  <div
+                    className={css({
+                      marginRight: "10px",
+                    })}
+                  >
+                    <Roundfillbutton
+                      buttonColor={"#ffffff"}
+                      buttonHoverColor={"#ffffff"}
+                      textColor={"#0565FF"}
+                      borderColor={"#0565FF"}
+                      text={"sdafsadfasdf"}
+                      hasArrow={false}
+                      borderRadius={"4px"}
+                      minwidth={"150px"}
+                    ></Roundfillbutton>
+                  </div>
+                  <div
+                    className={css({
+                      marginRight: "10px",
+                    })}
+                  >
+                    <Roundfillbutton
+                      buttonColor={"#ffffff"}
+                      buttonHoverColor={"#ffffff"}
+                      textColor={"#b00707 "}
+                      borderColor={"#b00707"}
+                      text={"Label"}
+                      hasArrow={false}
+                      borderRadius={"4px"}
+                      minwidth={"150px"}
+                    ></Roundfillbutton>
+                  </div>
+                  <div
+                    className={css({
+                      marginRight: "10px",
+                    })}
+                  >
+                    <Roundfillbutton
+                      buttonColor={"#ffffff"}
+                      buttonHoverColor={"#ffffff"}
+                      textColor={"#066501"}
+                      borderColor={"#066501"}
+                      text={"Label"}
+                      hasArrow={false}
+                      borderRadius={"4px"}
+                      minwidth={"150px"}
+                    ></Roundfillbutton>
+                  </div>
+                  <div
+                    className={css({
+                      marginRight: "10px",
+                    })}
+                  >
+                    <Roundfillbutton
+                      buttonColor={"#e71313"}
+                      buttonHoverColor={"#b30f0f"}
+                      borderColor={"#e71313"}
+                      textColor={"#fff"}
+                      text={"Label"}
+                      hasArrow={false}
+                      borderRadius={"4px"}
+                      minwidth={"150px"}
+                    ></Roundfillbutton>
+                  </div>
                 </div>
               </section>
 

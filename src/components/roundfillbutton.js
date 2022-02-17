@@ -21,11 +21,7 @@ function Roundfillbutton(props) {
         },
       })}
     >
-      <div
-        className={css({
-          marginRight: "10px",
-        })}
-      >
+      <div className={css({})}>
         <Button
           className={buttonClass}
           onClick={props.handleClick}
@@ -51,8 +47,8 @@ function Roundfillbutton(props) {
                 display: "inline-block",
                 color: props.textColor,
                 transition: "all ease 0.5s",
-                minWidth: "150px",
-                textTransform: "uppercase",
+                minWidth: props.minwidth,
+                // textTransform: "uppercase",
               }),
             },
           }}

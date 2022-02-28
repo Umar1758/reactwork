@@ -3,7 +3,7 @@ import { StatefulPopover, PLACEMENT, TRIGGER_TYPE } from "baseui/popover";
 import { Paragraph3 } from "baseui/typography";
 import { useStyletron } from "baseui";
 
-function Indicators(props) {
+function Impactbars(props) {
   const [css, theme] = useStyletron();
   return (
     <StatefulPopover
@@ -19,14 +19,12 @@ function Indicators(props) {
       overrides={{
         Root: {
           style: ({ $theme }) => ({
-            // outline: `${$theme.colors.warning200} solid`,
             outline: "0",
             border: "0",
           }),
         },
         Arrow: {
           style: ({ $theme }) => ({
-            // outline: `${$theme.colors.warning200} solid`,
             backgroundColor: "#fff2bd",
           }),
         },
@@ -44,25 +42,55 @@ function Indicators(props) {
         },
       }}
     >
-      {/* <span className={css({...theme.typography.font300})}>
-        Hover
-      </span> */}
-      <span
+      <div
         className={css({
           display: "inline-block",
-          background: props.color,
-          borderStyle: "solid",
-          borderWidth: "1px",
-          borderColor: props.border,
-          width: "13px",
-          height: "13px",
-          borderRadius: "50%",
-          marginTop: "5px",
+          position: "relative",
           cursor: "pointer",
         })}
-      ></span>
+      >
+        <span
+          className={css({
+            height: "4px",
+            background: "#ced6c6",
+            width: "4px",
+            display: "inline-block",
+            verticalAlign: "bottom",
+            marginRight: "4px",
+          })}
+        ></span>
+        <span
+          className={css({
+            height: "11px",
+            background: "#ced6c6",
+            width: "4px",
+            display: "inline-block",
+            marginRight: "4px",
+            verticalAlign: "bottom",
+          })}
+        ></span>
+        <span
+          className={css({
+            height: "15px",
+            background: "#ced6c6",
+            width: "4px",
+            display: "inline-block",
+            verticalAlign: "bottom",
+            marginRight: "4px",
+          })}
+        ></span>
+        <span
+          className={css({
+            height: "22px",
+            background: "#ced6c6",
+            width: "4px",
+            display: "inline-block",
+            verticalAlign: "bottom",
+          })}
+        ></span>
+      </div>
     </StatefulPopover>
   );
 }
 
-export default Indicators;
+export default Impactbars;

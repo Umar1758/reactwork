@@ -70,6 +70,7 @@ function Topheader(props) {
                   color: "#000",
                   fontSize: "22px",
                   marginTop: "-11px",
+                  zIndex: "2",
                 })}
               >
                 <Icons
@@ -92,6 +93,7 @@ function Topheader(props) {
                       borderTopLeftRadius: "4px",
                       borderBottomLeftRadius: "4px",
                       paddingLeft: "40px",
+                      zIndex: "1",
                     }),
                   },
                   Input: {
@@ -128,7 +130,7 @@ function Topheader(props) {
               />
               <div
                 className={css({
-                  opacity: "1",
+                  marginLeft: "-2px",
                 })}
               >
                 <Roundfillbutton

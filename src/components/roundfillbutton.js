@@ -11,7 +11,6 @@ function Roundfillbutton(props) {
   const [css, theme] = useStyletron();
   const [activeKey, setActiveKey] = React.useState("0");
   const secondary = "secondary";
-  const buttonClass = `button-${props.type}`;
   return (
     <ThemeProvider
       theme={createTheme(lightThemePrimitives, {
@@ -23,7 +22,18 @@ function Roundfillbutton(props) {
     >
       <div className={css({})}>
         <Button
-          className={buttonClass}
+          className={css({
+            ":hover": {
+              backgroundColor: props.buttonHoverColor,
+              borderColor: props.borderHoverColor,
+              color: props.textHoverColor,
+            },
+            ":focus": {
+              backgroundColor: props.buttonHoverColor,
+              borderColor: props.borderHoverColor,
+              color: props.textHoverColor,
+            },
+          })}
           onClick={props.handleClick}
           overrides={{
             BaseButton: {
@@ -32,7 +42,10 @@ function Roundfillbutton(props) {
                 fontSize: "17px",
                 fontWeight: "400",
                 lineHeight: "38px",
-                borderRadius: props.borderRadius,
+                borderTopLeftRadius: props.borderRadius,
+                borderTopRightRadius: props.borderRadius,
+                borderBottomLeftRadius: props.borderRadius,
+                borderBottomRightRadius: props.borderRadius,
                 borderStyle: "solid",
                 borderWidth: "1px",
                 borderLeftColor: props.borderColor,

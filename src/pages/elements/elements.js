@@ -11,11 +11,14 @@ import Roundfillbutton from "../../components/roundfillbutton";
 import Tables from "../../components/tables";
 import Topheader from "../../components/topheader";
 import Indicators from "../../components/indicators";
+import Impactbars from "../../components/impactbars";
+import Engagementchart from "../../components/engagementchart";
 import Icons from "../../components/icons";
 import Navtabs from "../../components/navtabs";
 import { Grid, Cell } from "baseui/layout-grid";
 import { StyledLink } from "baseui/link";
 import Dementiacard from "../../components/dementiacard";
+import image01 from "../../images/brain01.svg";
 import {
   HeadingXXLarge,
   HeadingXLarge,
@@ -209,6 +212,7 @@ function Elements() {
                 >
                   Dementia Center Design
                 </h3>
+                <Engagementchart></Engagementchart>
                 <Topheader
                   label={"Dementia Center Dashboard"}
                   isSearch={true}
@@ -242,7 +246,7 @@ function Elements() {
                       <Dementiacard
                         imgSrc={"/images/person.svg"}
                         logosrc={"/images/icon01.svg"}
-                        brainProgress={"/images/brain01.svg"}
+                        brainProgress={image01}
                         title={"Vyrkyre Vrangoth"}
                         date={"sep 21'21 "}
                         tooltipbrain={"Tooltip Text"}
@@ -325,8 +329,10 @@ function Elements() {
                     <Roundfillbutton
                       buttonColor={"#ffffff"}
                       buttonHoverColor={"#ffffff"}
-                      borderColor={"#B0B0B0"}
+                      borderColor={"#b0b0b0"}
                       textColor={"#363636"}
+                      borderHoverColor={"#525252"}
+                      textHoverColor={"#363636"}
                       text={"View All"}
                       hasArrow={false}
                       borderRadius={"100px"}
@@ -442,6 +448,8 @@ function Elements() {
                       buttonHoverColor={"#ffffff"}
                       borderColor={"#B0B0B0"}
                       textColor={"#363636"}
+                      borderHoverColor={"#525252"}
+                      textHoverColor={"#363636"}
                       text={"View all"}
                       hasArrow={false}
                       borderRadius={"100px"}
@@ -459,7 +467,6 @@ function Elements() {
                     fontWeight: "500",
                     marginBottom: "16px",
                     textAlign: "left",
-                    marginBottom: "0",
                   })}
                 >
                   Buttons Samples
@@ -479,7 +486,6 @@ function Elements() {
                       marginBottom: "16px",
                       textAlign: "left",
                       width: "100%",
-                      marginBottom: "0",
                     })}
                   >
                     Wizard Buttons
@@ -494,6 +500,8 @@ function Elements() {
                       buttonColor={"#318500"}
                       buttonHoverColor={"#3ba500"}
                       textColor={"#fff"}
+                      borderHoverColor={"#3ba500"}
+                      textHoverColor={"#fff"}
                       text={"Label"}
                       hasArrow={true}
                       borderRadius={"100px"}
@@ -510,6 +518,9 @@ function Elements() {
                       buttonColor={"#318500"}
                       buttonHoverColor={"#3ba500"}
                       textColor={"#fff"}
+                      borderColor={"#318500"}
+                      borderHoverColor={"#3ba500"}
+                      textHoverColor={"#fff"}
                       text={"Save"}
                       hasArrow={false}
                       borderRadius={"100px"}
@@ -527,6 +538,8 @@ function Elements() {
                       buttonHoverColor={"#f8f8f8"}
                       borderColor={"#3c3c3c"}
                       textColor={"#3c3c3c"}
+                      borderHoverColor={"#3C3C3C"}
+                      textHoverColor={"#3c3c3c"}
                       text={"Save"}
                       hasArrow={false}
                       borderRadius={"100px"}
@@ -566,7 +579,6 @@ function Elements() {
                       marginBottom: "16px",
                       textAlign: "left",
                       width: "100%",
-                      marginBottom: "0",
                     })}
                   >
                     Popup Buttons
@@ -582,6 +594,8 @@ function Elements() {
                       textColor={"#0565FF"}
                       borderColor={"#0565FF"}
                       text={"sdafsadfasdf"}
+                      borderHoverColor={"#0053B3"}
+                      textHoverColor={"#0053B3"}
                       hasArrow={false}
                       borderRadius={"4px"}
                       minwidth={"150px"}
@@ -597,6 +611,8 @@ function Elements() {
                       buttonHoverColor={"#ffffff"}
                       textColor={"#b00707 "}
                       borderColor={"#b00707"}
+                      borderHoverColor={"#B30F0F"}
+                      textHoverColor={"#B30F0F"}
                       text={"Label"}
                       hasArrow={false}
                       borderRadius={"4px"}
@@ -613,6 +629,8 @@ function Elements() {
                       buttonHoverColor={"#ffffff"}
                       textColor={"#066501"}
                       borderColor={"#066501"}
+                      borderHoverColor={"#066501"}
+                      textHoverColor={"#066501"}
                       text={"Label"}
                       hasArrow={false}
                       borderRadius={"4px"}
@@ -629,6 +647,8 @@ function Elements() {
                       buttonHoverColor={"#b30f0f"}
                       borderColor={"#e71313"}
                       textColor={"#fff"}
+                      borderHoverColor={"#B30F0F "}
+                      textHoverColor={"#fff"}
                       text={"Label"}
                       hasArrow={false}
                       borderRadius={"4px"}
@@ -696,32 +716,80 @@ function Elements() {
                 >
                   Indicators
                 </h3>
-                <Indicators
-                  color={"#FF9500"}
-                  border={"#FF9500"}
-                  tooltiptext={"Affirmed"}
-                ></Indicators>
-                <br></br>
-                <Indicators
-                  color={"#fff"}
-                  border={"#0AA401"}
-                  tooltiptext={"Status"}
-                ></Indicators>
-                <br></br>
+                <div
+                  className={css({
+                    display: "flex",
+                  })}
+                >
+                  <div
+                    className={css({
+                      marginRight: "15px",
+                      display: "flex",
+                      flexDirection: "column",
+                    })}
+                  >
+                    <Indicators
+                      color={"#FF9500"}
+                      border={"#FF9500"}
+                      tooltiptext={"Affirmed"}
+                    ></Indicators>
+                    <br></br>
+                    <Indicators
+                      color={"#fff"}
+                      border={"#0AA401"}
+                      tooltiptext={"Status"}
+                    ></Indicators>
+                    <br></br>
 
-                <Indicators
-                  color={"#3BA500"}
-                  border={"#3BA500"}
-                  tooltiptext={"Read"}
-                ></Indicators>
-                <br></br>
+                    <Indicators
+                      color={"#3BA500"}
+                      border={"#3BA500"}
+                      tooltiptext={"Read"}
+                    ></Indicators>
+                    <br></br>
 
-                <Indicators
-                  color={"#F33939"}
-                  border={"#F33939"}
-                  tooltiptext={"UnRead"}
-                ></Indicators>
-                <br></br>
+                    <Indicators
+                      color={"#F33939"}
+                      border={"#F33939"}
+                      tooltiptext={"UnRead"}
+                    ></Indicators>
+                    <br></br>
+                  </div>
+                  <div
+                    className={css({
+                      marginRight: "15px",
+                      display: "flex",
+                      flexDirection: "column",
+                    })}
+                  >
+                    <Impactbars
+                      impact={""}
+                      border={"#FF9500"}
+                      tooltiptext={"Affirmed"}
+                    ></Impactbars>
+                    <br></br>
+                    <Impactbars
+                      color={"#fff"}
+                      border={"#0AA401"}
+                      tooltiptext={"Status"}
+                    ></Impactbars>
+                    <br></br>
+
+                    <Impactbars
+                      color={"#3BA500"}
+                      border={"#3BA500"}
+                      tooltiptext={"Read"}
+                    ></Impactbars>
+                    <br></br>
+
+                    <Impactbars
+                      color={"#F33939"}
+                      border={"#F33939"}
+                      tooltiptext={"High Business Impact"}
+                    ></Impactbars>
+                    <br></br>
+                  </div>
+                </div>
               </section>
               <section id="icons">
                 <h3

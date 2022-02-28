@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="Group-3">
+    <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" id="Oval" fill="#F89600" fill-rule="evenodd" stroke="none" />
+    <g id="E" transform="translate(14.419922 12.349533)">
+      <path d="M9.50521 8.95182L3.25521 8.95182L3.25521 13.1836L10.5903 13.1836L10.5903 15.7986L0 15.7986L0 0L10.5686 0L10.5686 2.63672L3.25521 2.63672L3.25521 6.40191L9.50521 6.40191L9.50521 8.95182Z" id="Path" fill="#FFFFFF" stroke="none" />
+    </g>
+  </g>
+</svg>

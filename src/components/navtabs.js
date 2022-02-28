@@ -6,7 +6,7 @@ import {
   lightThemePrimitives,
 } from "baseui";
 import { Tabs, Tab } from "baseui/tabs";
-
+import Icons from "../components/icons";
 function Navtabs(props) {
   const [css] = useStyletron();
   const [activeKey, setActiveKey] = React.useState("0");
@@ -20,26 +20,28 @@ function Navtabs(props) {
       })}
     >
       <Tabs
+        activeKey={activeKey}
         onChange={({ activeKey }) => {
           setActiveKey(activeKey);
         }}
         activeKey={activeKey}
         overrides={{
           Root: {
-            style: ({ $theme }) => ({
+            style: ({ $theme, $active }) => ({
               outline: "0",
               // backgroundColor: $theme.colors.warning200,
             }),
           },
           Tab: {
-            style: ({ $theme }) => ({
+            style: ({ $theme, $active }) => ({
               height: "100%",
-              background:
-                "linear-gradient(rgb(255, 255, 255) 84.14%, rgb(225, 225, 225) 99.78%)",
-              paddingBottom: "16px",
-              paddingTop: "16px",
-              paddingLeft: "20px",
-              paddingRight: "20px",
+              background: !$active
+                ? "linear-gradient(rgb(255, 255, 255) 84.14%, rgb(225, 225, 225) 99.78%)"
+                : "#fff",
+              paddingBottom: "9px",
+              paddingTop: "9px",
+              paddingLeft: "12px",
+              paddingRight: "12px",
               borderRadius: "9px 9px 0 0",
               textAlign: "left",
               fontSize: "20px",
@@ -50,7 +52,10 @@ function Navtabs(props) {
               borderTop: "solid 1px #bdbdbd",
               borderRight: "1px solid #bdbdbd",
               borderLeft: "1px solid #bdbdbd",
-              borderBottom: "solid 1px #bdbdbd",
+              borderBottom: !$active
+                ? "solid 1px #bdbdbd"
+                : "solid 1px transparent",
+              fontWeight: !$active ? "400" : "500",
             }),
           },
           TabBar: {
@@ -74,9 +79,132 @@ function Navtabs(props) {
           },
         }}
       >
-        <Tab title="Tab Link 1">Cosntent 1</Tab>
-        <Tab title="Tab Link 2">Content 2</Tab>
-        <Tab title="Tab Link 3">Content 3</Tab>
+        <Tab
+          title={
+            <div>
+              <span
+                className={css({
+                  color: "#ff6565",
+                  borderColor: "#ff6565",
+                  borderRadius: "23px",
+                  minWidth: "32px",
+                  maxHeight: "42px",
+                  border: "2px solid",
+                  background: "#fff",
+                  fontSize: "22px",
+                  fontWeight: "500",
+                  textAlign: "center",
+                  lineHeight: "43px",
+                  paddingLeft: "5px",
+                  paddingRight: "5px",
+                  paddingTop: "0",
+                  paddingBottom: "0",
+                  margin: "0",
+                  position: "static",
+                  display: "inline-block",
+                  verticalAlign: "middle",
+                })}
+              >
+                1234
+              </span>
+              <span
+                className={css({
+                  paddingLeft: "15px",
+                  verticalAlign: "middle",
+                  display: "inline-block",
+                })}
+              >
+                Total Overdue
+              </span>
+            </div>
+          }
+        >
+          Cosntent 1
+        </Tab>
+        <Tab
+          title={
+            <div>
+              <span
+                className={css({
+                  color: "#0870E7",
+                  borderColor: "#0870E7",
+                  borderRadius: "23px",
+                  minWidth: "32px",
+                  maxHeight: "42px",
+                  border: "2px solid",
+                  background: "#fff",
+                  fontSize: "22px",
+                  fontWeight: "500",
+                  textAlign: "center",
+                  lineHeight: "43px",
+                  paddingLeft: "5px",
+                  paddingRight: "5px",
+                  paddingTop: "0",
+                  paddingBottom: "0",
+                  margin: "0",
+                  position: "static",
+                  display: "inline-block",
+                  verticalAlign: "middle",
+                })}
+              >
+                12
+              </span>
+              <span
+                className={css({
+                  paddingLeft: "15px",
+                  verticalAlign: "middle",
+                  display: "inline-block",
+                })}
+              >
+                Total Due
+              </span>
+            </div>
+          }
+        >
+          Content 2
+        </Tab>
+        <Tab
+          title={
+            <div>
+              <span
+                className={css({
+                  color: "#3BA500",
+                  borderColor: "#3BA500",
+                  borderRadius: "23px",
+                  minWidth: "32px",
+                  maxHeight: "42px",
+                  border: "2px solid",
+                  background: "#fff",
+                  fontSize: "22px",
+                  fontWeight: "500",
+                  textAlign: "center",
+                  lineHeight: "43px",
+                  paddingLeft: "5px",
+                  paddingRight: "5px",
+                  paddingTop: "0",
+                  paddingBottom: "0",
+                  margin: "0",
+                  position: "static",
+                  display: "inline-block",
+                  verticalAlign: "middle",
+                })}
+              >
+                12
+              </span>
+              <span
+                className={css({
+                  paddingLeft: "15px",
+                  verticalAlign: "middle",
+                  display: "inline-block",
+                })}
+              >
+                Total Completed
+              </span>
+            </div>
+          }
+        >
+          Content 3
+        </Tab>
       </Tabs>
     </ThemeProvider>
   );

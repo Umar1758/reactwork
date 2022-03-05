@@ -53,3 +53,18 @@ body {
   border-radius: 9px;
   margin-bottom: 10px;
 }
+
+.google-visualization-tooltip { 
+
+  width: 150px !important;
+  border: none !important;
+  border-radius: 0px !important;
+  position: absolute !important;
+  background: #fff2bd !important;
+  background-color: #fff2bd !important;
+  font-size:  10px !important;
+
+}
+div.google-visualization-tooltip > ul > li > span {
+  color: #363636 !important;
+}

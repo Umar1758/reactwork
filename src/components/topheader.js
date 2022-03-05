@@ -89,7 +89,7 @@ function Topheader(props) {
                     style: ({ $theme }) => ({
                       outline: "none",
                       backgroundColor: "#fff",
-                      border: "0",
+                      borderWidth: "0",
                       borderTopLeftRadius: "4px",
                       borderBottomLeftRadius: "4px",
                       paddingLeft: "40px",
@@ -99,7 +99,7 @@ function Topheader(props) {
                   Input: {
                     style: ({ $theme }) => ({
                       width: "100%",
-                      height: "38px",
+                      height: "36px",
                       backgroundColor: "#ffffff",
                       transition: "all ease  0.5s",
                       paddingLeft: "8px",

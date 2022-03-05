@@ -6,6 +6,10 @@ import {
   lightThemePrimitives,
 } from "baseui";
 import InputFieldLabel from "../../components/inputfieldlabel";
+import CircularProgress from "../../components/circular-progress";
+import Comboboxselect from "../../components/comboboxselect";
+import Radiobutton from "../../components/radiobutton";
+import Selectdropdown from "../../components/selectdropdown";
 import Textareaform from "../../components/textareaform";
 import Roundfillbutton from "../../components/roundfillbutton";
 import Tables from "../../components/tables";
@@ -36,6 +40,7 @@ function Elements() {
   const [activeKey, setActiveKey] = React.useState("0");
   const heading1 = "Engagement Measures Due";
   const heading2 = "Ability Assessment Due";
+  const heading3 = "Overall engagement overview";
 
   return (
     <div className="AppHome">
@@ -77,6 +82,10 @@ function Elements() {
                       marginBottom: "16px",
                       textAlign: "left",
                       display: "block",
+                      // "@media screen and (max-width: 880px)": {
+                      //   backgroundColor: "#276EF1",
+                      //   color: "#fff",
+                      // },
                     })}
                   >
                     Dementia Center
@@ -136,6 +145,48 @@ function Elements() {
                     })}
                   >
                     Textarea
+                  </StyledLink>
+                  <StyledLink
+                    href="#select"
+                    className={css({
+                      fontSize: "20px",
+                      color: "#000",
+                      lineHeight: "24px",
+                      fontWeight: "500",
+                      marginBottom: "16px",
+                      textAlign: "left",
+                      display: "block",
+                    })}
+                  >
+                    Select Dropdown
+                  </StyledLink>
+                  <StyledLink
+                    href="#combobox"
+                    className={css({
+                      fontSize: "20px",
+                      color: "#000",
+                      lineHeight: "24px",
+                      fontWeight: "500",
+                      marginBottom: "16px",
+                      textAlign: "left",
+                      display: "block",
+                    })}
+                  >
+                    Combobox
+                  </StyledLink>
+                  <StyledLink
+                    href="#radiobutton"
+                    className={css({
+                      fontSize: "20px",
+                      color: "#000",
+                      lineHeight: "24px",
+                      fontWeight: "500",
+                      marginBottom: "16px",
+                      textAlign: "left",
+                      display: "block",
+                    })}
+                  >
+                    Radio Button
                   </StyledLink>
                   <StyledLink
                     href="#indicators"
@@ -212,7 +263,11 @@ function Elements() {
                 >
                   Dementia Center Design
                 </h3>
-                <Engagementchart></Engagementchart>
+                <CircularProgress></CircularProgress>
+                {/* <Comboboxselect></Comboboxselect> */}
+
+                {/* <Radiobutton radioOptions={["yes", "no"]}></Radiobutton> */}
+
                 <Topheader
                   label={"Dementia Center Dashboard"}
                   isSearch={true}
@@ -455,6 +510,48 @@ function Elements() {
                       borderRadius={"100px"}
                       minwidth={"130px"}
                     ></Roundfillbutton>
+                  </div>
+                </div>
+                <div className="dashboardwidget">
+                  <div
+                    className={css({
+                      paddingBottom: "15px",
+                    })}
+                  >
+                    <HeadingXSmall margin="0" color={"#363636"}>
+                      {heading3}
+                    </HeadingXSmall>
+                  </div>
+                  <div>
+                    <Outer>
+                      <Grid
+                        // padding="0"
+                        overrides={{
+                          Grid: {
+                            style: ({ $theme }) => ({
+                              paddingLeft: "0 !important",
+                              paddingRight: "0 !important",
+                            }),
+                          },
+                        }}
+                      >
+                        <Cell
+                          span={[8]}
+                          overrides={{
+                            Cell: {
+                              style: ({ $theme }) => ({}),
+                            },
+                          }}
+                        >
+                          <Inner>
+                            <Engagementchart></Engagementchart>
+                          </Inner>
+                        </Cell>
+                        <Cell span={[4]}>
+                          <Inner>sidebar</Inner>
+                        </Cell>
+                      </Grid>
+                    </Outer>
                   </div>
                 </div>
               </section>
@@ -703,6 +800,51 @@ function Elements() {
                 </h3>
                 <Textareaform></Textareaform>
               </section>
+              <section id="select">
+                <h3
+                  className={css({
+                    fontSize: "20px",
+                    color: "#000",
+                    lineHeight: "24px",
+                    fontWeight: "500",
+                    marginBottom: "16px",
+                    textAlign: "left",
+                  })}
+                >
+                  Select Dropdown
+                </h3>
+                <Selectdropdown></Selectdropdown>
+              </section>
+              <section id="combobox">
+                <h3
+                  className={css({
+                    fontSize: "20px",
+                    color: "#000",
+                    lineHeight: "24px",
+                    fontWeight: "500",
+                    marginBottom: "16px",
+                    textAlign: "left",
+                  })}
+                >
+                  Combobox
+                </h3>
+                <Comboboxselect></Comboboxselect>
+              </section>
+              <section id="radiobutton">
+                <h3
+                  className={css({
+                    fontSize: "20px",
+                    color: "#000",
+                    lineHeight: "24px",
+                    fontWeight: "500",
+                    marginBottom: "16px",
+                    textAlign: "left",
+                  })}
+                >
+                  Radio Button
+                </h3>
+                <Radiobutton></Radiobutton>
+              </section>
               <section id="indicators">
                 <h3
                   className={css({
@@ -765,20 +907,20 @@ function Elements() {
                     <Impactbars
                       impact={""}
                       border={"#FF9500"}
-                      tooltiptext={"Affirmed"}
+                      tooltiptext={"Medium Business Impact"}
                     ></Impactbars>
                     <br></br>
                     <Impactbars
                       color={"#fff"}
                       border={"#0AA401"}
-                      tooltiptext={"Status"}
+                      tooltiptext={"Low Business Impact"}
                     ></Impactbars>
                     <br></br>
 
                     <Impactbars
                       color={"#3BA500"}
                       border={"#3BA500"}
-                      tooltiptext={"Read"}
+                      tooltiptext={"High Business Impact"}
                     ></Impactbars>
                     <br></br>
 
@@ -897,33 +1039,6 @@ function Elements() {
           </Cell>
         </Grid>
       </Outer>
-
-      <div
-        className={css({
-          background: "#fff",
-          width: "1140px",
-          maxWidth: "1140px",
-          paddingLeft: "0",
-          paddingRight: "0",
-          paddingTop: "15px",
-          paddingBottom: "60px",
-          marginLeft: "auto",
-          marginRight: "auto",
-          marginTop: "0",
-          marginBottom: "0",
-        })}
-      ></div>
-      <div className="container">
-        <h3></h3>
-
-        <div className="buttons-wrapper"></div>
-        <div className="topbar-wrapper"></div>
-
-        <h3>Forms Samples</h3>
-        <div className="topbar-wrapper">
-          <InputFieldLabel></InputFieldLabel>
-        </div>
-      </div>
     </div>
   );
 }

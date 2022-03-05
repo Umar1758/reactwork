@@ -88,12 +88,12 @@ function Radiobutton(props) {
             },
           }}
         >
-          {/* {props.radioOptions.length
-          ? props.radioOptions.map((r, i) => <Radio value={i + 1}>{r}</Radio>)
-          : null} */}
+          {props.radioOptions.length
+            ? props.radioOptions.map((r, i) => <Radio value={i + 1}>{r}</Radio>)
+            : null}
 
-          <Radio value="1">Yess</Radio>
-          <Radio value="2">No</Radio>
+          {/* <Radio value="1">Yess</Radio>
+          <Radio value="2">No</Radio> */}
 
           {/* {radioArr?radioArr.map(r=><radion value={r}>r</radion>):null} */}
         </RadioGroup>

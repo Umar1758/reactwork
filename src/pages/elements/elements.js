@@ -266,7 +266,9 @@ function Elements() {
                 <CircularProgress></CircularProgress>
                 {/* <Comboboxselect></Comboboxselect> */}
 
-                {/* <Radiobutton radioOptions={["yes", "no"]}></Radiobutton> */}
+                <Radiobutton
+                  radioOptions={["yessss", "no", "ha"]}
+                ></Radiobutton>
 
                 <Topheader
                   label={"Dementia Center Dashboard"}
@@ -843,7 +845,7 @@ function Elements() {
                 >
                   Radio Button
                 </h3>
-                <Radiobutton></Radiobutton>
+                {/* <Radiobutton></Radiobutton> */}
               </section>
               <section id="indicators">
                 <h3

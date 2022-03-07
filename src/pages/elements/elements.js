@@ -8,7 +8,9 @@ import {
 import InputFieldLabel from "../../components/inputfieldlabel";
 import CircularProgress from "../../components/circular-progress";
 import Comboboxselect from "../../components/comboboxselect";
+import Selectoption from "../../components/selectoption";
 import Radiobutton from "../../components/radiobutton";
+import Radioimagebutton from "../../components/radio-image-button";
 import Selectdropdown from "../../components/selectdropdown";
 import Textareaform from "../../components/textareaform";
 import Roundfillbutton from "../../components/roundfillbutton";
@@ -22,26 +24,40 @@ import Navtabs from "../../components/navtabs";
 import { Grid, Cell } from "baseui/layout-grid";
 import { StyledLink } from "baseui/link";
 import Dementiacard from "../../components/dementiacard";
-import image01 from "../../images/brain01.svg";
-import {
-  HeadingXXLarge,
-  HeadingXLarge,
-  HeadingLarge,
-  HeadingMedium,
-  HeadingSmall,
-  HeadingXSmall,
-} from "baseui/typography";
+import { HeadingXSmall } from "baseui/typography";
+
+import CONSTANTS from "../../utils/constants";
+
+import imageicon01 from "../../utils/images/imageicon01.svg";
+import imageicon02 from "../../utils/images/imageicon02.svg";
+import imageicon03 from "../../utils/images/imageicon03.svg";
+import imageicon04 from "../../utils/images/imageicon04.svg";
+import imageicon05 from "../../utils/images/imageicon05.svg";
+import imageicon06 from "../../utils/images/imageicon06.svg";
+import imageicon07 from "../../utils/images/imageicon07.svg";
+import imageicon08 from "../../utils/images/imageicon08.svg";
+import imageicon09 from "../../utils/images/imageicon09.svg";
 
 function Elements() {
-  const [value, setValue] = React.useState("");
-  const next = "Next";
   const backtext = "Back";
   const [css] = useStyletron();
-  const [activeKey, setActiveKey] = React.useState("0");
   const heading1 = "Engagement Measures Due";
   const heading2 = "Ability Assessment Due";
   const heading3 = "Overall engagement overview";
+  const activitylabel = "Activities";
 
+  const filterOptions = [
+    { label: "Show All", imageIcon: "" },
+    { label: "Bathing/Washing", imageIcon: imageicon01 },
+    { label: "Getting dressed", imageIcon: imageicon02 },
+    { label: "Groupwork skills", imageIcon: imageicon03 },
+    { label: "Leisure Activities ", imageIcon: imageicon04 },
+    { label: "Dining ", imageIcon: imageicon05 },
+    { label: "Engaging with Other ", imageIcon: imageicon06 },
+    { label: "Looking at a newspnews ", imageIcon: imageicon07 },
+    { label: "{Custom.Activity.Title ", imageIcon: imageicon08 },
+    { label: "Leisure Activities ", imageIcon: imageicon09 },
+  ];
   return (
     <div className="AppHome">
       <Outer>
@@ -263,12 +279,15 @@ function Elements() {
                 >
                   Dementia Center Design
                 </h3>
-                <CircularProgress></CircularProgress>
+                {/* <Radioimagebutton
+                  radioOptions={filterOptions}
+                ></Radioimagebutton> */}
+                {/* <CircularProgress></CircularProgress> */}
                 {/* <Comboboxselect></Comboboxselect> */}
 
-                <Radiobutton
+                {/* <Radiobutton
                   radioOptions={["yessss", "no", "ha"]}
-                ></Radiobutton>
+                ></Radiobutton> */}
 
                 <Topheader
                   label={"Dementia Center Dashboard"}
@@ -281,9 +300,27 @@ function Elements() {
                       paddingBottom: "15px",
                     })}
                   >
-                    <HeadingXSmall margin="0" color={"#363636"}>
-                      {heading1}
-                    </HeadingXSmall>
+                    <div className={css(styles.flexSpaceBetween)}>
+                      <HeadingXSmall margin="0" color={"#363636"}>
+                        {heading1}
+                      </HeadingXSmall>
+                      <div
+                        className={css({
+                          display: "inline-flex",
+                        })}
+                      >
+                        <div
+                          className={css({
+                            marginRight: "10px",
+                          })}
+                        >
+                          <Selectoption></Selectoption>
+                        </div>
+                        <div>
+                          <Selectoption></Selectoption>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div
                     className={css({
@@ -292,91 +329,31 @@ function Elements() {
                       marginBottom: "25px",
                     })}
                   >
-                    <div
-                      className={css({
-                        maxWidth: "20%",
-                        flex: "20%",
-                        paddingLeft: "0",
-                        paddingRight: "10px",
-                      })}
-                    >
-                      <Dementiacard
-                        imgSrc={"/images/person.svg"}
-                        logosrc={"/images/icon01.svg"}
-                        brainProgress={image01}
-                        title={"Vyrkyre Vrangoth"}
-                        date={"sep 21'21 "}
-                        tooltipbrain={"Tooltip Text"}
-                      ></Dementiacard>
-                    </div>
-                    <div
-                      className={css({
-                        maxWidth: "20%",
-                        flex: "20%",
-                        paddingLeft: "10px",
-                        paddingRight: "10px",
-                      })}
-                    >
-                      <Dementiacard
-                        imgSrc={"/images/person.svg"}
-                        logosrc={"/images/icon02.svg"}
-                        brainProgress={"/images/brain02.svg"}
-                        title={"Vyrkyre Vrangoth"}
-                        date={"sep 21'21 "}
-                        tooltipbrain={"Tooltip Text"}
-                      ></Dementiacard>
-                    </div>
-                    <div
-                      className={css({
-                        maxWidth: "20%",
-                        flex: "20%",
-                        paddingLeft: "10px",
-                        paddingRight: "10px",
-                      })}
-                    >
-                      <Dementiacard
-                        imgSrc={"/images/person.svg"}
-                        logosrc={"/images/icon01.svg"}
-                        brainProgress={"/images/brain01.svg"}
-                        title={"Vyrkyre Vrangoth"}
-                        date={"sep 21'21 "}
-                        tooltipbrain={"Tooltip Text"}
-                      ></Dementiacard>
-                    </div>
-                    <div
-                      className={css({
-                        maxWidth: "20%",
-                        flex: "20%",
-                        paddingLeft: "10px",
-                        paddingRight: "10px",
-                      })}
-                    >
-                      <Dementiacard
-                        imgSrc={"/images/person.svg"}
-                        logosrc={"/images/icon02.svg"}
-                        brainProgress={"/images/brain02.svg"}
-                        title={"Vyrkyre Vrangoth"}
-                        date={"sep 21'21 "}
-                        tooltipbrain={"Tooltip Text"}
-                      ></Dementiacard>
-                    </div>
-                    <div
-                      className={css({
-                        maxWidth: "20%",
-                        flex: "20%",
-                        paddingLeft: "10px",
-                        paddingRight: "0",
-                      })}
-                    >
-                      <Dementiacard
-                        imgSrc={"/images/person.svg"}
-                        logosrc={"/images/icon02.svg"}
-                        brainProgress={"/images/brain03.svg"}
-                        title={"Vyrkyre Vrangoth"}
-                        date={"sep 21'21 "}
-                        tooltipbrain={"Tooltip Text"}
-                      ></Dementiacard>
-                    </div>
+                    {CONSTANTS.engagementCardsList.map(
+                      (engagementCard, index) => {
+                        return (
+                          <div
+                            className={css({
+                              maxWidth: "20%",
+                              flex: "20%",
+                              paddingLeft: "0",
+                              paddingRight: "10px",
+                            })}
+                          >
+                            <Dementiacard
+                              key={index}
+                              imgSrc={engagementCard.imgSrc}
+                              nameInitials={engagementCard.nameInitials}
+                              logosrc={engagementCard.logosrc}
+                              brainProgress={engagementCard.brainProgress}
+                              title={engagementCard.title}
+                              date={engagementCard.date}
+                              tooltipbrain={"Tooltip Text"}
+                            ></Dementiacard>
+                          </div>
+                        );
+                      }
+                    )}
                   </div>
                   <div
                     className={css({
@@ -403,9 +380,27 @@ function Elements() {
                       paddingBottom: "15px",
                     })}
                   >
-                    <HeadingXSmall margin="0" color={"#363636"}>
-                      {heading2}
-                    </HeadingXSmall>
+                    <div className={css(styles.flexSpaceBetween)}>
+                      <HeadingXSmall margin="0" color={"#363636"}>
+                        {heading2}
+                      </HeadingXSmall>
+                      <div
+                        className={css({
+                          display: "inline-flex",
+                        })}
+                      >
+                        <div
+                          className={css({
+                            marginRight: "10px",
+                          })}
+                        >
+                          <Selectoption></Selectoption>
+                        </div>
+                        <div>
+                          <Selectoption></Selectoption>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div
                     className={css({
@@ -414,86 +409,28 @@ function Elements() {
                       marginBottom: "25px",
                     })}
                   >
-                    <div
-                      className={css({
-                        maxWidth: "20%",
-                        flex: "20%",
-                        paddingLeft: "0",
-                        paddingRight: "10px",
-                      })}
-                    >
-                      <Dementiacard
-                        imgSrc={"/images/person.svg"}
-                        logosrc={"/images/e-letter.svg"}
-                        brainProgress={""}
-                        title={"Urevhur Masrawyn"}
-                        date={"sep 21'21 "}
-                      ></Dementiacard>
-                    </div>
-                    <div
-                      className={css({
-                        maxWidth: "20%",
-                        flex: "20%",
-                        paddingLeft: "10px",
-                        paddingRight: "10px",
-                      })}
-                    >
-                      <Dementiacard
-                        imgSrc={"/images/person.svg"}
-                        logosrc={"/images/r-letter.svg"}
-                        brainProgress={""}
-                        title={"Urevhur Masrawyn"}
-                        date={"sep 21'21 "}
-                      ></Dementiacard>
-                    </div>
-                    <div
-                      className={css({
-                        maxWidth: "20%",
-                        flex: "20%",
-                        paddingLeft: "10px",
-                        paddingRight: "10px",
-                      })}
-                    >
-                      <Dementiacard
-                        imgSrc={"/images/person.svg"}
-                        logosrc={"/images/r-letter.svg"}
-                        brainProgress={""}
-                        title={"Vyrkyre Vrangoth"}
-                        date={"sep 21'21 "}
-                      ></Dementiacard>
-                    </div>
-                    <div
-                      className={css({
-                        maxWidth: "20%",
-                        flex: "20%",
-                        paddingLeft: "10px",
-                        paddingRight: "10px",
-                      })}
-                    >
-                      <Dementiacard
-                        imgSrc={"/images/person.svg"}
-                        logosrc={"/images/r-letter.svg"}
-                        brainProgress={""}
-                        title={"Ydhefaris Naraloth Glenn glenn"}
-                        date={"sep 21'21 "}
-                      ></Dementiacard>
-                    </div>
-                    <div
-                      className={css({
-                        maxWidth: "20%",
-                        flex: "20%",
-                        paddingLeft: "10px",
-                        paddingRight: "0",
-                      })}
-                    >
-                      <Dementiacard
-                        imgSrc={"/images/person.svg"}
-                        logosrc={"/images/e-letter.svg"}
-                        brainProgress={""}
-                        title={"Ydhefaris Naraloth Glenn glenn"}
-                        date={"sep 21'21 "}
-                      ></Dementiacard>
-                    </div>
+                    {CONSTANTS.abilityCardsList.map((engagementCard, index) => {
+                      return (
+                        <div
+                          className={css({
+                            maxWidth: "20%",
+                            flex: "20%",
+                            paddingLeft: "0",
+                            paddingRight: "10px",
+                          })}
+                        >
+                          <Dementiacard
+                            key={index}
+                            imgSrc={engagementCard.imgSrc}
+                            logosrc={engagementCard.logosrc}
+                            brainProgress={engagementCard.brainProgress}
+                            title={engagementCard.title}
+                            date={engagementCard.date}
+                            tooltipbrain={"Tooltip Text"}
+                          ></Dementiacard>
+                        </div>
+                      );
+                    })}
                   </div>
                   <div
                     className={css({
@@ -538,7 +475,7 @@ function Elements() {
                         }}
                       >
                         <Cell
-                          span={[8]}
+                          span={[9]}
                           overrides={{
                             Cell: {
                               style: ({ $theme }) => ({}),
@@ -549,8 +486,15 @@ function Elements() {
                             <Engagementchart></Engagementchart>
                           </Inner>
                         </Cell>
-                        <Cell span={[4]}>
-                          <Inner>sidebar</Inner>
+                        <Cell span={[3]}>
+                          <Inner>
+                            <h3 className={css(styles.heading3)}>
+                              {activitylabel}
+                            </h3>
+                            <Radioimagebutton
+                              radioOptions={filterOptions}
+                            ></Radioimagebutton>
+                          </Inner>
                         </Cell>
                       </Grid>
                     </Outer>
@@ -1051,6 +995,21 @@ const Outer = ({ children }) => {
 const Inner = ({ children }) => {
   const [css, theme] = useStyletron();
   return <div className={css({})}>{children}</div>;
+};
+
+const styles = {
+  flexSpaceBetween: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  heading3: {
+    color: "#000000",
+    fontSize: "14px",
+    fontWeight: "500",
+    lineHeight: "27px",
+    marginBottom: "4px",
+    marginTop: "0",
+  },
 };
 
 export default Elements;

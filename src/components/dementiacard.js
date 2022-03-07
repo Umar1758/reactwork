@@ -6,48 +6,20 @@ import { Paragraph3 } from "baseui/typography";
 function Dementiacard(props) {
   const [css, theme] = useStyletron();
   return (
-    <div
-      className={css({
-        boxShadow: "1px 1px 2px rgba(0,0,0,0.36)",
-        borderRadius: "8px",
-        background: "#f2f2f2",
-        paddingBottom: "10px",
-        paddingTop: "5px",
-        paddingLeft: "5px",
-        paddingRight: "5px",
-        position: "relative",
-      })}
-    >
+    <div className={css(styles.cardDC)}>
       <div className={css({ position: "relative" })}>
-        <div
-          className={css({
-            position: "absolute",
-            top: "5px",
-            left: "5px",
-            zIndex: "1",
-          })}
-        >
+        <div className={css(styles.logoDC)}>
           <img src={props.logosrc} className={css({})} />
         </div>
         <div className={css({ position: "relative" })}>
-          <figure
-            className={css({
-              marginBottom: "0",
-              marginTop: "0",
-              paddingTop: "30px",
-            })}
-          >
-            <img
-              src={props.imgSrc}
-              className={css({
-                height: "87px",
-                width: "87px",
-                borderRadius: "50%",
-                objectFit: "cover",
-                objectPosition: "center",
-                marginBottom: "0",
-              })}
-            />
+          <figure className={css(styles.imageFigure)}>
+            {props.imgSrc != "" ? (
+              <img src={props.imgSrc} className={css(styles.imageDC)} />
+            ) : (
+              <span className={css(styles.nameInitials)}>
+                {props.nameInitials}
+              </span>
+            )}
           </figure>
           <StatefulPopover
             content={
@@ -62,14 +34,12 @@ function Dementiacard(props) {
             overrides={{
               Root: {
                 style: ({ $theme }) => ({
-                  // outline: `${$theme.colors.warning200} solid`,
                   outline: "0",
                   border: "0",
                 }),
               },
               Arrow: {
                 style: ({ $theme }) => ({
-                  // outline: `${$theme.colors.warning200} solid`,
                   backgroundColor: "#fff2bd",
                 }),
               },
@@ -87,53 +57,90 @@ function Dementiacard(props) {
               },
             }}
           >
-            <div
-              className={css({
-                position: "absolute",
-                top: "25px",
-                right: "25px",
-                cursor: "pointer",
-              })}
-            >
+            <div className={css(styles.brainProgress)}>
               <img src={props.brainProgress} />
             </div>
           </StatefulPopover>
         </div>
       </div>
-      <h3
-        className={css({
-          fontSize: "16px",
-          color: "#222222",
-          lineHeight: "16px",
-          fontWeight: "400",
-          textAlign: "center",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-          display: "-webkit-box",
-          WebkitLineClamp: "2",
-          WebkitBoxOrient: "vertical",
-          minHeight: "40px",
-          marginTop: "5px",
-          marginBottom: "0",
-        })}
-      >
-        {props.title}
-      </h3>
-      <p
-        className={css({
-          fontSize: "14px",
-          color: "#3b3a3a",
-          lineHeight: "18px",
-          fontWeight: "400",
-          textAlign: "center",
-          marginTop: "0",
-          marginBottom: "0",
-        })}
-      >
-        Due: {props.date}
-      </p>
+      <h3 className={css(styles.titleDC)}>{props.title}</h3>
+      <p className={css(styles.dateDC)}>Due: {props.date}</p>
     </div>
   );
 }
+const styles = {
+  cardDC: {
+    boxShadow: "1px 1px 2px rgba(0,0,0,0.36)",
+    borderRadius: "8px",
+    background: "#f2f2f2",
+    paddingBottom: "10px",
+    paddingTop: "5px",
+    paddingLeft: "5px",
+    paddingRight: "5px",
+    position: "relative",
+  },
+  logoDC: {
+    position: "absolute",
+    top: "5px",
+    left: "5px",
+    zIndex: "1",
+  },
+  imageFigure: {
+    marginBottom: "0",
+    marginTop: "0",
+    paddingTop: "30px",
+  },
+  imageDC: {
+    height: "87px",
+    width: "87px",
+    borderRadius: "50%",
+    objectFit: "cover",
+    objectPosition: "center",
+    marginBottom: "0",
+  },
+  dateDC: {
+    fontSize: "14px",
+    color: "#3b3a3a",
+    lineHeight: "18px",
+    fontWeight: "400",
+    textAlign: "center",
+    marginTop: "0",
+    marginBottom: "0",
+  },
+  titleDC: {
+    fontSize: "16px",
+    color: "#222222",
+    lineHeight: "16px",
+    fontWeight: "400",
+    textAlign: "center",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    display: "-webkit-box",
+    WebkitLineClamp: "2",
+    WebkitBoxOrient: "vertical",
+    minHeight: "40px",
+    marginTop: "5px",
+    marginBottom: "0",
+  },
+  brainProgress: {
+    position: "absolute",
+    top: "25px",
+    right: "25px",
+    cursor: "pointer",
+  },
+  nameInitials: {
+    color: "#838383",
+    fontSize: "30px",
+    fontWeight: "400",
+    textAlign: "center",
+    width: "89px",
+    height: "89px",
+    lineHeight: "89px",
+    background: "#d8d8d8",
+    display: "inline-block",
+    borderRadius: "50%",
+    marginBottom: "2px",
+  },
+};
 
 export default Dementiacard;

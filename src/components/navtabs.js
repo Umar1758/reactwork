@@ -6,7 +6,8 @@ import {
   lightThemePrimitives,
 } from "baseui";
 import { Tabs, Tab } from "baseui/tabs";
-import Icons from "../components/icons";
+import CONSTANTS from "../utils/constants";
+
 function Navtabs(props) {
   const [css] = useStyletron();
   const [activeKey, setActiveKey] = React.useState("0");
@@ -20,7 +21,6 @@ function Navtabs(props) {
       })}
     >
       <Tabs
-        activeKey={activeKey}
         onChange={({ activeKey }) => {
           setActiveKey(activeKey);
         }}
@@ -79,6 +79,21 @@ function Navtabs(props) {
           },
         }}
       >
+        {/* {CONSTANTS.tabList.map((tabItem, index) => {
+          return (
+            <Tab
+              title={
+                <div>
+                  <span className={css(styles.tabCircle)}>{tabItem.count}</span>
+                  <span className={css(styles.tabTitle)}>{tabItem.title}</span>
+                </div>
+              }
+            >
+              Content 3
+            </Tab>
+          );
+        })} */}
+
         <Tab
           title={
             <div>
@@ -166,40 +181,8 @@ function Navtabs(props) {
         <Tab
           title={
             <div>
-              <span
-                className={css({
-                  color: "#3BA500",
-                  borderColor: "#3BA500",
-                  borderRadius: "23px",
-                  minWidth: "32px",
-                  maxHeight: "42px",
-                  border: "2px solid",
-                  background: "#fff",
-                  fontSize: "22px",
-                  fontWeight: "500",
-                  textAlign: "center",
-                  lineHeight: "43px",
-                  paddingLeft: "5px",
-                  paddingRight: "5px",
-                  paddingTop: "0",
-                  paddingBottom: "0",
-                  margin: "0",
-                  position: "static",
-                  display: "inline-block",
-                  verticalAlign: "middle",
-                })}
-              >
-                12
-              </span>
-              <span
-                className={css({
-                  paddingLeft: "15px",
-                  verticalAlign: "middle",
-                  display: "inline-block",
-                })}
-              >
-                Total Completed
-              </span>
+              <span className={css(styles.tabCircle)}>12</span>
+              <span className={css(styles.tabTitle)}>Total Completed</span>
             </div>
           }
         >
@@ -210,4 +193,32 @@ function Navtabs(props) {
   );
 }
 
+const styles = {
+  tabCircle: {
+    color: "#3BA500",
+    borderColor: "#3BA500",
+    borderRadius: "23px",
+    minWidth: "32px",
+    maxHeight: "42px",
+    border: "2px solid",
+    background: "#fff",
+    fontSize: "22px",
+    fontWeight: "500",
+    textAlign: "center",
+    lineHeight: "43px",
+    paddingLeft: "5px",
+    paddingRight: "5px",
+    paddingTop: "0",
+    paddingBottom: "0",
+    margin: "0",
+    position: "static",
+    display: "inline-block",
+    verticalAlign: "middle",
+  },
+  tabTitle: {
+    paddingLeft: "15px",
+    verticalAlign: "middle",
+    display: "inline-block",
+  },
+};
 export default Navtabs;

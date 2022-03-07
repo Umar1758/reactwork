@@ -7,7 +7,7 @@ import {
 } from "baseui";
 
 import { RadioGroup, Radio, ALIGN } from "baseui/radio";
-function Radiobutton(props) {
+function Radioimagebutton(props) {
   const [css, theme] = useStyletron();
   const [value, setValue] = React.useState("1");
   return (
@@ -26,12 +26,21 @@ function Radiobutton(props) {
       >
         <RadioGroup
           value={value}
-          onChange={(e) => setValue(e.currentTarget.value)}
-          name="number"
-          align={ALIGN.horizontal}
+          onChange={(e) => setValue(e.target.value)}
+          name="test"
+          align={ALIGN.vertical}
           overrides={{
             Root: {
-              style: ({ $theme }) => ({}),
+              style: ({ $theme, $checked }) => ({
+                backgroundColor: $checked ? "#E0E0E0" : "#F0F0F0",
+                paddingRight: "15px",
+                paddingLeft: "15px",
+                paddingBottom: "6px",
+                paddingTop: "6px",
+                minWidth: "190px",
+                marginTop: "0",
+                marginBottom: "2px",
+              }),
             },
             Input: {
               style: ({ $theme }) => ({
@@ -51,11 +60,15 @@ function Radiobutton(props) {
                 // outline: `${$theme.colors.warning200} solid`,
                 // backgroundColor: $theme.colors.warning200
                 opacity: "11",
-                paddingLeft: "8px",
-                fontSize: "16px",
-                color: "#363636",
-                lineHeight: "24px",
+                paddingLeft: "10px",
+                fontSize: "14px",
+                color: "#000",
+                lineHeight: "27px",
                 fontWeight: "400",
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                width: "160px",
               }),
             },
             RadioGroupRoot: {
@@ -89,15 +102,27 @@ function Radiobutton(props) {
           }}
         >
           {props.radioOptions.length
-            ? props.radioOptions.map((r, i) => <Radio value={i + 1}>{r}</Radio>)
-            : null}
+            ? props.radioOptions.map((r, i) => (
+                <Radio value={i + 1} tabindex={i + 1}>
+                  {r.imageIcon !== "" ? (
+                    <img
+                      src={r.imageIcon}
+                      className={css({
+                        display: "inline-block",
+                        verticalAlign: "middle",
+                        marginRight: "5px",
+                      })}
+                    />
+                  ) : null}
 
-          {/* <Radio value="1">Yess</Radio>
-          <Radio value="2">No</Radio> */}
+                  {r.label}
+                </Radio>
+              ))
+            : null}
         </RadioGroup>
       </ThemeProvider>
     </div>
   );
 }
 
-export default Radiobutton;
+export default Radioimagebutton;

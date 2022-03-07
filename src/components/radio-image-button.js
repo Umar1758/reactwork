@@ -9,7 +9,7 @@ import {
 import { RadioGroup, Radio, ALIGN } from "baseui/radio";
 function Radioimagebutton(props) {
   const [css, theme] = useStyletron();
-  const [value, setValue] = React.useState("1");
+  const [value, setValue] = React.useState(1);
   return (
     <div className="">
       <ThemeProvider
@@ -26,8 +26,13 @@ function Radioimagebutton(props) {
       >
         <RadioGroup
           value={value}
-          onChange={(e) => setValue(e.target.value)}
-          name="test"
+          // onChange={(e) => setValue(e.currentTargets.value)}
+          onChange={(e) => {
+            debugger;
+
+            return setValue(e.currentTarget.value);
+          }}
+          name="activity"
           align={ALIGN.vertical}
           overrides={{
             Root: {
@@ -103,7 +108,7 @@ function Radioimagebutton(props) {
         >
           {props.radioOptions.length
             ? props.radioOptions.map((r, i) => (
-                <Radio value={i + 1} tabindex={i + 1}>
+                <Radio value="{i+1}">
                   {r.imageIcon !== "" ? (
                     <img
                       src={r.imageIcon}

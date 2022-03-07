@@ -789,7 +789,9 @@ function Elements() {
                 >
                   Radio Button
                 </h3>
-                {/* <Radiobutton></Radiobutton> */}
+                <Radiobutton
+                  radioOptions={["yessss", "no", "ha"]}
+                ></Radiobutton>
               </section>
               <section id="indicators">
                 <h3

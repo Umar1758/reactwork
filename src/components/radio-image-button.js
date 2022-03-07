@@ -26,12 +26,7 @@ function Radioimagebutton(props) {
       >
         <RadioGroup
           value={value}
-          // onChange={(e) => setValue(e.currentTargets.value)}
-          onChange={(e) => {
-            debugger;
-
-            return setValue(e.currentTarget.value);
-          }}
+          onChange={(e) => setValue(e.currentTargets.value)}
           name="activity"
           align={ALIGN.vertical}
           overrides={{
@@ -108,7 +103,7 @@ function Radioimagebutton(props) {
         >
           {props.radioOptions.length
             ? props.radioOptions.map((r, i) => (
-                <Radio value="{i+1}">
+                <Radio value={i + 1}>
                   {r.imageIcon !== "" ? (
                     <img
                       src={r.imageIcon}

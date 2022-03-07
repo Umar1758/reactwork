@@ -83,7 +83,7 @@ const styles = {
     position: "absolute",
     top: "5px",
     left: "5px",
-    zIndex: "1",
+    zIndex: "0",
   },
   imageFigure: {
     marginBottom: "0",

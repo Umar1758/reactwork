@@ -8,6 +8,8 @@ import {
 import { StyledLink as Link } from "baseui/link";
 import { TableBuilder, TableBuilderColumn } from "baseui/table-semantic";
 import Indicators from "../components/indicators";
+import AvatarComponent from "../components/avatar.component";
+import NameLabelComponent from "../components/name-label.component";
 import Icons from "../components/icons";
 function Tables(props) {
   const [sortColumn, setSortColumn] = useState("bar");
@@ -30,54 +32,54 @@ function Tables(props) {
       riskcode: "#FF9500",
       risktooltip: "Medium Risk",
     },
-    {
-      foo: 1,
-      bar: "carrot",
-      url: "https://example.com/c",
-      opt1: "123",
-      opt2: "123",
-      color: "#ff9500",
-      border: "#ff9500",
-      tooltiptext: "UnRead",
-      iconname: "compliance-tools",
-      colorcode: "#3ba500",
-      tooltipopup: "Compliant",
-      iconrisk: "risk-assessments",
-      riskcode: "#FF9500",
-      risktooltip: "Medium Risk",
-    },
-    {
-      foo: 2,
-      bar: "apple",
-      url: "https://example.com/a",
-      opt1: "123",
-      opt2: "123",
-      color: "#f33939",
-      border: "#f33939",
-      tooltiptext: "Affirmed",
-      iconname: "compliance-tools",
-      colorcode: "#ff9500",
-      tooltipopup: "Partially Compliant",
-      iconrisk: "risk-assessments",
-      riskcode: "#3BA500",
-      risktooltip: "Low Risk",
-    },
-    {
-      foo: 144,
-      bar: "apple",
-      url: "https://example.com/a",
-      opt1: "123",
-      opt2: "123",
-      color: "#fff",
-      border: "#0aa401",
-      tooltiptext: "Affirmed",
-      iconname: "compliance-tools",
-      colorcode: "#f33939",
-      tooltipopup: "Not Compliant",
-      iconrisk: "risk-assessments",
-      riskcode: "#F33939",
-      risktooltip: "High Risk",
-    },
+    // {
+    //   foo: 1,
+    //   bar: "carrot",
+    //   url: "https://example.com/c",
+    //   opt1: "123",
+    //   opt2: "123",
+    //   color: "#ff9500",
+    //   border: "#ff9500",
+    //   tooltiptext: "UnRead",
+    //   iconname: "compliance-tools",
+    //   colorcode: "#3ba500",
+    //   tooltipopup: "Compliant",
+    //   iconrisk: "risk-assessments",
+    //   riskcode: "#FF9500",
+    //   risktooltip: "Medium Risk",
+    // },
+    // {
+    //   foo: 2,
+    //   bar: "apple",
+    //   url: "https://example.com/a",
+    //   opt1: "123",
+    //   opt2: "123",
+    //   color: "#f33939",
+    //   border: "#f33939",
+    //   tooltiptext: "Affirmed",
+    //   iconname: "compliance-tools",
+    //   colorcode: "#ff9500",
+    //   tooltipopup: "Partially Compliant",
+    //   iconrisk: "risk-assessments",
+    //   riskcode: "#3BA500",
+    //   risktooltip: "Low Risk",
+    // },
+    // {
+    //   foo: 144,
+    //   bar: "apple",
+    //   url: "https://example.com/a",
+    //   opt1: "123",
+    //   opt2: "123",
+    //   color: "#fff",
+    //   border: "#0aa401",
+    //   tooltiptext: "Affirmed",
+    //   iconname: "compliance-tools",
+    //   colorcode: "#f33939",
+    //   tooltipopup: "Not Compliant",
+    //   iconrisk: "risk-assessments",
+    //   riskcode: "#F33939",
+    //   risktooltip: "High Risk",
+    // },
   ]);
 
   const sortedData = useMemo(() => {
@@ -125,11 +127,22 @@ function Tables(props) {
       >
         <TableBuilderColumn id="impact" header="Impact" sortable>
           {(row) => (
-            <Indicators
-              color={row.color}
-              border={row.border}
-              tooltiptext={row.tooltiptext}
-            ></Indicators>
+            // <Indicators
+            //   color={row.color}
+            //   border={row.border}
+            //   tooltiptext={row.tooltiptext}
+            // ></Indicators>
+            <>
+              <AvatarComponent
+                name={"Homer Simpson"}
+                imageSrc={""}
+                size={"80px"}
+              ></AvatarComponent>
+              <NameLabelComponent
+                namelabel={"Homer Simpson"}
+                isLink={true}
+              ></NameLabelComponent>
+            </>
           )}
         </TableBuilderColumn>
         <TableBuilderColumn id="actions" header="Actions" sortable>

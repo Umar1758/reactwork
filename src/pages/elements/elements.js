@@ -24,6 +24,8 @@ import Navtabs from "../../components/navtabs";
 import { Grid, Cell } from "baseui/layout-grid";
 import { StyledLink } from "baseui/link";
 import Dementiacard from "../../components/dementiacard";
+import AvatarComponent from "../../components/avatar.component";
+import NameLabelComponent from "../../components/name-label.component";
 import { HeadingXSmall } from "baseui/typography";
 
 import CONSTANTS from "../../utils/constants";
@@ -38,6 +40,7 @@ import imageicon07 from "../../utils/images/imageicon07.svg";
 import imageicon08 from "../../utils/images/imageicon08.svg";
 import imageicon09 from "../../utils/images/imageicon09.svg";
 
+import person from "../../utils/images/person.svg";
 function Elements() {
   const backtext = "Back";
   const [css] = useStyletron();
@@ -279,16 +282,24 @@ function Elements() {
                 >
                   Dementia Center Design
                 </h3>
+                <AvatarComponent
+                  name={"Homer Simpson"}
+                  imageSrc={""}
+                  size={"20px"}
+                ></AvatarComponent>
+                <NameLabelComponent
+                  namelabel={"Homer Simpson"}
+                  isLink={true}
+                ></NameLabelComponent>
+
                 {/* <Radioimagebutton
                   radioOptions={filterOptions}
                 ></Radioimagebutton> */}
                 {/* <CircularProgress></CircularProgress> */}
                 {/* <Comboboxselect></Comboboxselect> */}
-
                 {/* <Radiobutton
                   radioOptions={["yessss", "no", "ha"]}
                 ></Radiobutton> */}
-
                 <Topheader
                   label={"Dementia Center Dashboard"}
                   isSearch={true}
